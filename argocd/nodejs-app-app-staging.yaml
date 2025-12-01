@@ -18,7 +18,7 @@ spec:
       valueFiles:
         - Values.yaml
         - Values-staging.yaml
-      values: |
+      values:
         app:
           namespace: nodejs-app-staging
         image:
