@@ -19,7 +19,6 @@ spec:
         - Values.yaml
         - Values-staging.yaml
       values: |
-        value: beta
         app:
           namespace: nodejs-app-staging
         image:
