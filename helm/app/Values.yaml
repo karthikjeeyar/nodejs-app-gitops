@@ -7,7 +7,7 @@ image:
   registry: quay.io
   organization: karthik_jk
   host: quay.io
-  name: nodejs-ex
+  name: demo-nodejs-ex
   tag: latest
   pullPolicy: Always
 
