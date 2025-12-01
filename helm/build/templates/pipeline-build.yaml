@@ -5,7 +5,9 @@ metadata:
   namespace: {{ .Values.app.namespace }}
   labels:
     type: pipeline
-    app.kubernetes.io/instance: nodejs-app
+    app.kubernetes.io/name: {{ .Values.app.name }}
+    app.kubernetes.io/instance: {{ .Values.app.name }}
+    app.kubernetes.io/instance: {{ .Values.app.name }}
     backstage.io/kubernetes-id: {{ .Values.app.name }}
 spec:
   params:
