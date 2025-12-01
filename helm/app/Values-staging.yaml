@@ -1,6 +1,11 @@
 # Staging environment overrides
 # This file extends Values.yaml with staging-specific configurations
 
+app:
+  namespace: nodejs-app-staging
+image:
+  tag: beta
+
 replicaCount: 2
 
 resources:

@@ -18,12 +18,6 @@ spec:
       valueFiles:
         - Values.yaml
         - Values-staging.yaml
-      parameters:
-        - name: app.namespace
-          value: nodejs-app-staging
-        - name: image.tag
-          value: beta
-        # Add staging-specific overrides here
   destination:
     server: https://kubernetes.default.svc
     namespace: nodejs-app-staging
