@@ -47,7 +47,7 @@ spec:
     - name: build-and-push
       params:
         - name: IMAGE
-          value: '$(params.IMAGE):$(params.IMAGE_TAG)'
+          value: '$(params.IMAGE):$(tasks.fetch-repository.results.COMMIT)'
         - name: TLS_VERIFY
           value: 'false'
         - name: CONTEXT
@@ -71,7 +71,7 @@ spec:
     - name: deploy
       params:
         - name: SCRIPT
-          value: oc rollout status deploy/{{ .Values.app.name }}
+          value: oc set image deploy/{{ .Values.app.name }} {{ .Values.app.name }}=$(params.IMAGE):$(tasks.fetch-repository.results.COMMIT)
       runAfter:
         - build-and-push
       taskRef:
