@@ -68,21 +68,32 @@ spec:
       workspaces:
         - name: source
           workspace: shared-data
-    - name: deploy
-      params:
-        - name: SCRIPT
-          value: oc set image deploy/{{ .Values.app.name }} {{ .Values.app.name }}=$(params.IMAGE):$(tasks.fetch-repository.results.COMMIT)
+    - name: argocd-task
       runAfter:
         - build-and-push
       taskRef:
-        params:
-          - name: kind
-            value: task
-          - name: name
-            value: openshift-client
-          - name: namespace
-            value: openshift-pipelines
-        resolver: cluster
+        kind: Task
+        name: argocd-task
+      params:
+        - name: appName
+          value: nodejs-app
+        - name: image-tag
+          value: sha-$(tasks.fetch-repository.results.COMMIT)
+    # - name: deploy
+    #   params:
+    #     - name: SCRIPT
+    #       value: oc set image deploy/{{ .Values.app.name }} {{ .Values.app.name }}=$(params.IMAGE):$(tasks.fetch-repository.results.COMMIT)
+    #   runAfter:
+    #     - build-and-push
+    #   taskRef:
+    #     params:
+    #       - name: kind
+    #         value: task
+    #       - name: name
+    #         value: openshift-client
+    #       - name: namespace
+    #         value: openshift-pipelines
+    #     resolver: cluster
       # - name: update-gitops
       #   runAfter:
       #     - build-and-push
