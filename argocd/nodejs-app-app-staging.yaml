@@ -19,7 +19,7 @@ spec:
         - Values.yaml
         - Values-staging.yaml
       values: |
-        # Override namespace for staging
+        value: beta
         app:
           namespace: nodejs-app-staging
         image:
