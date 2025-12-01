@@ -47,7 +47,7 @@ spec:
     - name: build-and-push
       params:
         - name: IMAGE
-          value: '$(params.IMAGE):$(tasks.fetch-repository.results.COMMIT)'
+          value: '$(params.IMAGE):sha-$(tasks.fetch-repository.results.COMMIT)'
         - name: TLS_VERIFY
           value: 'false'
         - name: CONTEXT
