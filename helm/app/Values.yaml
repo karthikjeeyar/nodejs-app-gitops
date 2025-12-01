@@ -8,7 +8,7 @@ image:
   organization: karthik_jk
   host: quay.io
   name: demo-nodejs-ex
-            tag: sha-45c19b3b9539e85952fa26863d2d2e5f4da54736
+  tag: sha-45c19b3b9539e85952fa26863d2d2e5f4da54736
   pullPolicy: Always
 
 replicaCount: 1
