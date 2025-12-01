@@ -5,10 +5,10 @@ app:
   cluster: your-cluster.example.com
 
 git:
-  branch: main
-  repo: https://github.com/karthikjeeyar/nodejs-app.git
+  branch: master
+  repo: https://github.com/karthikjeeyar/nodejs-ex.git
   org: karthikjeeyar
-  name: nodejs-app
+  name: nodejs-ex
   host: github.com
   token: ''
   webhookSecret: ''
@@ -25,6 +25,6 @@ image:
   registry: quay.io
   organization: karthik_jk
   host: quay.io
-  name: nodejs-ex
+  name: demo-nodejs-ex
   tag: latest
   secretName: registry-credentials
