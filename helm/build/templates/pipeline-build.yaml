@@ -3,6 +3,9 @@ kind: Pipeline
 metadata:
   name: {{ .Values.app.name }}-build
   namespace: {{ .Values.app.namespace }}
+  annotations:
+    argocd.argoproj.io/tracking-id: my-app:apps/Deployment:default/{{ .Values.app.name}}
+
   labels:
     type: pipeline
     app.kubernetes.io/name: {{ .Values.app.name }}
