@@ -4,7 +4,7 @@
 app:
   namespace: nodejs-app-staging
 image:
-  tag: beta
+            tag: preprod
 
 replicaCount: 2
 
