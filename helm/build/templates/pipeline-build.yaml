@@ -6,6 +6,7 @@ metadata:
   labels:
     type: pipeline
     app.kubernetes.io/name: {{ .Values.app.name }}
+    argocd.argoproj.io/instance: {{ .Values.app.name }}
     app.kubernetes.io/instance: {{ .Values.app.name }}
     app.kubernetes.io/instance: {{ .Values.app.name }}
     backstage.io/kubernetes-id: {{ .Values.app.name }}
