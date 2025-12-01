@@ -17,13 +17,6 @@ spec:
     helm:
       valueFiles:
         - Values.yaml
-      values: |
-        # Override namespace for dev
-        app:
-          namespace: nodejs-app-dev
-        image:
-          tag: latest
-        # Add dev-specific overrides here
   destination:
     server: https://kubernetes.default.svc
     namespace: nodejs-app-dev
