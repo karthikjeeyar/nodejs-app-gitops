@@ -1,0 +1,30 @@
+
+app:
+  name: nodejs-app
+  namespace: nodejs-app-dev
+  cluster: your-cluster.example.com
+
+git:
+  branch: main
+  repo: https://github.com/karthikjeeyar/nodejs-app.git
+  org: karthikjeeyar
+  name: nodejs-app
+  host: github.com
+  token: ''
+  webhookSecret: ''
+
+# Sealed Secrets configuration
+# Sealed Secrets allow you to store encrypted secrets in Git
+# To use: 1) Install Sealed Secrets Controller, 2) Seal your secret with kubeseal, 3) Set enabled: true
+sealedSecrets:
+  enabled: true  # Set to true to use Sealed Secrets (requires properly sealed dockerconfigjson)
+  dockerconfigjson: AgBxj3L4jA2hA+S7tn/h4ymSC3s7l0P/BzvkKjMiUVEPtiRum9xmesLHygH4AGiaqk7qhnXUqKWSRe3eaRQYhWP3xG80fmLw24urJH4k2FXLx1Z+OLcvcq92TUa9BvTA6WxMqpgZBVwlMHaDFLGYUT70FcrARISitDcIeikkQM4ZlXv66afoDvjIKTfo3X2X+FzavIw6nMdXHKIZOVrgINmDddyjCYmzihDe/3ezGqgOJ9i036sWhHTxBVx7FCxq3yRsn7lFJC7n8zy//A60hApKznkvdnUYL+8pBbczrfD8ThzArepSfCUI1eEEMGnA4jXPFW78vp2lf6ReNYBP7KySgDIKCd4ufb5rnQ/JX0QRHffLug2LfYUuz6cuqvYxX9k4P/HMZMaROhXXMVso5Pr6c14qA4IRO7/SD/HwiKBBk1Tw3O3I2/LZp6GSObYqTobyN01yif7LsVyIhmFp7uI2/u8Zt32/Rg4XIWAVJ4IjCJxmFSY1ERKGxL1vncoTs+ewET8360u5F0uKACcVYvvIMOfxtDatMahDePVJAIwVQTzqhNEkAoEFwSPr39XbIGfCGMpsCnxXALEKCJF7O7Y8uiuXu19GTSUJijtHz9ILm/FiE2Q0R3j+DMUn/YriLnbBQRymj00zRYWg7Fti2u9g3tnQ79CEy+uNqqyD5mM6QgEBtP7b2LPepUT2tiADQ6B8D0zm8BflCH9F1wHLKF1k7gKEEMW+76mC4yh+tlIchK3wMXfSkHYFNt3bXX5Xv+EqGJLb4jhoxepsxNAIbsN1Se9TrlEGgGHS7vjh5MQaEUsTl9chblJrvLeJyLy5rmCtIOsACzIA4Tu3QuebqMtQ2BWn41vFmnDPDgEz3LgnS1tXcVBv29zqZ1YCC1QZ8AmmPdBJu+GPEoxiQ7/Hnef9i3t/XmfV1luxc5NQDxX5De8hiw==
+
+
+image:
+  registry: quay.io
+  organization: karthik_jk
+  host: quay.io
+  name: nodejs-ex
+  tag: latest
+  secretName: registry-credentials
