@@ -24,7 +24,7 @@ route:
   tls:
     enabled: true
     insecureEdgeTerminationPolicy: Redirect
-    termination: edge
+    termination: reencrypt
 
 resources:
   limits:
