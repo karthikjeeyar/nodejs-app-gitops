@@ -14,7 +14,7 @@ spec:
     name: {{ .Values.app.name }}
     weight: 100
   port:
-    targetPort: http
+    targetPort: https
   {{- if .Values.route.tls.enabled }}
   tls:
     termination: {{ .Values.route.tls.termination }}
