@@ -20,7 +20,8 @@ spec:
       restartPolicy: Never
       containers:
       - name: patch-serviceaccount
-        image: quay.io/openshift/origin-cli:latest
+        #quay.io/openshift/origin-cli:latest 
+        image: registry.redhat.io/openshift4/ose-cli@sha256:3d5b31cc3fbf878015e5c3ed1d48379d74b15b77a1a823024a7a2b7cd5e2e86d 
         command:
         - /bin/sh
         - -c
