@@ -2,7 +2,10 @@
 # This file extends Values.yaml with production-specific configurations
 
 replicaCount: 3
-
+app:
+  namespace: nodejs-app-prod
+image:
+            tag: latest
 resources:
   limits:
     cpu: 2000m
